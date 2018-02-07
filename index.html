@@ -11,10 +11,9 @@
     </head>
 
     <body>
-      <div id="form"
+    <div id="divbackground">
         <header>
             <h1>Budget Buddy</h1>
-
         </header>
         <div>
           <button id="updateIncomeButton">UPDATE INCOME</button>
@@ -22,7 +21,6 @@
         <div>
           <button id="incomeSubmitButton">ADD EXPENSE</button>
         </div>
-
         <div id="totalExpenseRoom">
             <progress id="totalBudgetRoom"></progress>
         </div>
@@ -36,6 +34,7 @@
             <h3>Bills</h3>
             <progress id="totalBills" class="smallProgress"></progress>
         </div>
+    </div>
         <div>
             <form id="incomeForm" onsubmit="event.preventDefault()">
                 <h2>Weekly Income</h2>
