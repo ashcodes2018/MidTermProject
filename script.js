@@ -14,9 +14,10 @@ $(document).ready(function() {
 	$("#updateButton").click(function(event){
 		$("#incomeForm").show();
 	});
-	$("incomeFormSubmit").click(function(event){
+	$("#incomeSubmitButton").click(function(event){
+		event.preventDefault();
 		totalIncome = $("#incomeInput").val();
-		$("#totalIncomeBar").attr('max-value:', totalIncome);
+		$("#totalBudgetRoom").attr('max-value:', totalIncome);
 		$("#incomeForm").hide();
 	});
 	$("addButton").click(function(event){
