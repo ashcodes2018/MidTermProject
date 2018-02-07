@@ -9,21 +9,23 @@ $(document).ready(function() {
 	var billsBar;
 	var expenseType;
 
+	$("#incomeForm").hide();
+	$("#expenseForm").hide();
 
-
-	$("#updateButton").click(function(event){
+	$("#updateIncomeButton").click(function(event){
+		console.log("Hey");
 		$("#incomeForm").show();
 	});
-	$("#incomeSubmitButton").click(function(event){
+	$("#saveIncomeButton").click(function(event){
 		event.preventDefault();
 		totalIncome = $("#incomeInput").val();
-		$("#totalBudgetRoom").attr('max-value:', totalIncome);
+		$("#totalBudgetRoom").attr('max', totalIncome);
 		$("#incomeForm").hide();
 	});
-	$("addButton").click(function(event){
+	$("#addExpenseButton").click(function(event){
 		$("#expenseForm").show();
 	});
-	$("#addExpenseButton").click(function(event){
+	$("#saveExpenseButton").click(function(event){
 		expenseType = $("#dropdownInput").val();
 		expenseAmount = $("#expenseAmount").val();
 		expenseDescription = $("#expenseDescription").val();
