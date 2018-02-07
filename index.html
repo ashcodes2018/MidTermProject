@@ -15,6 +15,13 @@
             <h1>Budget Buddy</h1>
 
         </header>
+        <div>
+          <button>UPDATE INCOME</button>
+        </div>
+        <div>
+          <button>ADD EXPENSE</button>
+        </div>
+
         <div id="totalExpenseRoom">
             <progress id="totalBudgetRoom"></progress>
         </div>
@@ -31,24 +38,29 @@
         <div>
             <form id="incomeForm">
                 <h2>Weekly Income</h2>
-                <input type="number" placeholder="Weekly Income" id="">
-                <button>ADD</button>
+                <input type="number" placeholder="Weekly Income" id="incomeInput">
+                <button type = "submit" id = "incomeSubmitButton">ADD</button>
             </form>
         </div>
         <form id="expenseForm">
+          <h2>Enter Expense</h2>
+          <p>Category:</p>
             <select>
                 <option value="entertainment">Entertainment</option>
                 <option value="food">Food</option>
                 <option value="clothing">Clothing</option>
                 <option value="bills">Bill</option>
             </select>
-            <input type="number" placeholder="amount" id="">
-            <textarea placeholder="description" rows="5" cols="25"></textarea>
+            <p>Amount:</p>
+            <input type="number" id="">
+            <p>Description</p>
+            <textarea></textarea>
+            <button>Save</button>
         </form>
 
 
 
-
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="script.js"></script>
     </body>
 
