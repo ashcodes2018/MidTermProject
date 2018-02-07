@@ -15,6 +15,13 @@
             <h1>Budget Buddy</h1>
 
         </header>
+        <div>
+          <button>UPDATE INCOME</button>
+        </div>
+        <div>
+          <button>ADD EXPENSE</button>
+        </div>
+
         <div id="totalExpenseRoom">
             <progress id="totalBudgetRoom"></progress>
         </div>
@@ -36,14 +43,19 @@
             </form>
         </div>
         <form id="expenseForm">
+          <h2>Enter Expense</h2>
+          <p>Category:</p>
             <select>
-                <option value="entertainment"></option>
-                <option value="food"></option>
-                <option value="clothing"></option>
-                <option value="bills"></option>
+                <option value="entertainment">Entertainment</option>
+                <option value="food">Food</option>
+                <option value="clothing">Clothing</option>
+                <option value="bills">Bill</option>
             </select>
-            <input type="number" placeholder="amount" id="">
-            <textarea placeholder="description" rows="5" cols="25"></textarea>
+            <p>Amount:</p>
+            <input type="number" id="">
+            <p>Description</p>
+            <textarea></textarea>
+            <button>Save</button>
         </form>
 
 
