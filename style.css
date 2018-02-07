@@ -15,12 +15,7 @@ body{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#updateIncomeButton{
-
-}
-
-
-#updateButton {
+#updateIncomeButton {
     width: 100%;
     height: 30px;
     background-color: green;
@@ -28,7 +23,7 @@ body{
     color: white;
     border-radius: 20px;
 }
-#incomeSubmitButton {
+#addExpenseButton {
     width: 100%;
     height: 30px;
     margin-top: 10px;
