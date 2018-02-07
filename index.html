@@ -16,7 +16,7 @@
 
         </header>
         <div>
-          <button id="updateButton">UPDATE INCOME</button>
+          <button id="updateIncomeButton">UPDATE INCOME</button>
         </div>
         <div>
           <button id="incomeSubmitButton">ADD EXPENSE</button>
@@ -36,10 +36,10 @@
             <progress id="totalBills"></progress>
         </div>
         <div>
-            <form id="incomeForm">
+            <form id="incomeForm" onsubmit="event.preventDefault()">
                 <h2>Weekly Income</h2>
                 <input type="number" placeholder="Weekly Income" id="incomeInput">
-                <button type = "submit" id = "incomeSubmitButton">ADD</button>
+                <button type = "submit" id = "saveIncomeButton">ADD</button>
             </form>
         </div>
         <form id="expenseForm">
@@ -55,7 +55,7 @@
             <input type="number" id="">
             <p>Description</p>
             <textarea></textarea>
-            <button>Save</button>
+            <button id="saveExpenseButton">Save</button>
         </form>
 
 
