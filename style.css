@@ -1,11 +1,24 @@
 
 body{
   height:100%;
-  background-image: url("dollar.png");
+  background-image: url("color.jpg");
+  width:100%;
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
 }
+#divbackground{
+  background-color: #ccc;
+  margin: 20px auto;
+  text-align: center;
+  width:75%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#updateIncomeButton{
+
+}
+
 
 #updateIncomeButton {
     width: 100%;
