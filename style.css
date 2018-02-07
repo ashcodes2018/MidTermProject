@@ -1,0 +1,41 @@
+#updateButton {
+    width: 100%;
+    height: 30px;
+    background-color: green;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+#incomeSubmitButton {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+#totalBudgetRoom {
+    width: 100%;
+    height: 30px;
+    margin: 20px auto;
+}
+#categoryExpenseRoom {
+    text-align: center;
+}
+.smallProgress {
+    width: 100%;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border: solid black 1px;
+    padding: 10px 10px;
+}
+.form button {
+    width: 100%;
+    height: 20px;
+    margin: 10px auto;
+}
