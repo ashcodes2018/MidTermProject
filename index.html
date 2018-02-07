@@ -9,8 +9,42 @@
         <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
     </head>
-    <body>
 
+    <body>
+        <header>
+            <h1>Budget Buddy</h1>
+
+        </header>
+        <div id="totalExpenseRoom">
+            <progress id="totalBudgetRoom"></progress>
+        </div>
+        <div id="categoryExpenseRoom">
+            <h2>Entertainment</h2>
+            <progress id="totalEnt"></progress>
+            <h2>Food</h2>
+            <progress id="totalFood"></progress>
+            <h2>Clothing</h2>
+            <progress id="totalClothing"></progress>
+            <h2>Bills</h2>
+            <progress id="totalBills"></progress>
+        </div>
+        <div>
+            <form id="incomeForm">
+                <h2>Weekly Income</h2>
+                <input type="number" placeholder="Weekly Income" id="">
+                <button>ADD</button>
+            </form>
+        </div>
+        <form id="expenseForm">
+            <select>
+                <option value="entertainment"></option>
+                <option value="food"></option>
+                <option value="clothing"></option>
+                <option value="bills"></option>
+            </select>
+            <input type="number" placeholder="amount" id="">
+            <textarea placeholder="description" rows="5" cols="25"></textarea>
+        </form>
 
 
 
