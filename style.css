@@ -1,0 +1,8 @@
+body{
+  height:100%;
+  background-image: url("dollar.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+
+}
