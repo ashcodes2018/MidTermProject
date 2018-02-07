@@ -8,6 +8,7 @@ $(document).ready(function() {
 	var clothingBar;
 	var billsBar;
 	var expenseType;
+	var totalExpenses;
 
 	$("#incomeForm").hide();
 	$("#expenseForm").hide();
@@ -30,6 +31,16 @@ $(document).ready(function() {
 		expenseAmount = $("#expenseAmount").val();
 		expenseDescription = $("#expenseDescription").val();
 
+		if (expenseType === "Food"){
+			$("#totalFood").
+		} else if (expenseType === "Clothing"){
+			
+		} else if (expenseType === "Entertainment"){
+			
+		} else if (expenseType === "Bills"){
+			
+		}
+		totalExpenses = 
 		$("#expenseForm").hide();
 	});
 
