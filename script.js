@@ -73,6 +73,19 @@ $(document).ready(function() {
         }
 
     })
+    // $("#totalEnt").click(function(){
+    //     $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="entSpan"></span></div></div>')
+    // });
+    // $("#totalFood").click(function(){
+    //     $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="foodSpan"></span></div></div>')
+    // });
+    // $("#totalClothing").click(function(){
+    //     $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="clothingSpan"></span></div></div>')
+    // });
+    // $("#totalBills").click(function(){
+    //     $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="billsSpan"></span></div></div>')
+    // });
+
     function getItemsForCategory(category) {
         return allExpenses.filter(function(expense) {
             if (category == expense.category) {
