@@ -34,7 +34,7 @@ $(document).ready(function() {
             if (income > 0 && income >= Number($("#expenseAmount").val())) {
                 var category = $("#dropdownInput").val();
                 var amount = Number($("#expenseAmount").val());
-                var newExpenseObject = { category: category, amount: amount /*description*/ };
+                var newExpenseObject = { category: category, amount: amount};
 
                 allExpenses.push(newExpenseObject);
                 $("#incomeNumber").text(income-Number($("#expenseAmount").val()));

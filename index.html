@@ -36,7 +36,7 @@
             <progress id="totalBills" class="smallProgress" value="0"></progress>
         </div>
         <div>
-            <form id="incomeForm" onsubmit="event.preventDefault()">
+            <form id="incomeForm" class="form" onsubmit="event.preventDefault()">
                 <h2>Weekly Income</h2>
                 <input type="number" placeholder="Weekly Income" id="incomeInput" required>
                 <button type="submit" id="saveIncomeButton">ADD</button>
@@ -53,8 +53,6 @@
             </select>
             <p>Amount:</p>
             <input type="number" id="expenseAmount" required>
-            <p>Description</p>
-            <textarea></textarea>
             <button id="saveExpenseButton">Save</button>
         </form>
 
