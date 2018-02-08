@@ -32,8 +32,8 @@ $(document).ready(function() {
     	event.preventDefault();
         var expenseType = $("#dropdownInput").val();
         console.log(expenseType);
-        expenseAmount = $("#expenseAmount").val();
-                console.log(expenseAmount);
+        var expenseAmount = $("#expenseAmount").val();
+        console.log(expenseAmount);
 
         expenseDescription = $("#expenseDescription").val();
 
