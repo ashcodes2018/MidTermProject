@@ -3,10 +3,10 @@ $(document).ready(function() {
 		var income;
 		$("#incomeForm").hide();
 		$("#expenseForm").hide()
-		var FoodBar = $("#totalFood").val(0);
-		var EntertainmentBar = $("#totalEnt").val(0);
-		var ClothingBar = $("#totalClothing").val(0);
-		var BillsBar = $("#totalBills").val(0);
+		// var FoodBar = $("#totalFood").val();
+		// var EntertainmentBar = $("#totalEnt").val();
+		// var ClothingBar = $("#totalClothing").val();
+		// var BillsBar = $("#totalBills").val();
 
 		var allExpenses=[];
 		
@@ -39,7 +39,6 @@ $(document).ready(function() {
 
 			allExpenses.push(newExpenseObject);
 			income = runningTotal-amount;
-			console.log(income);
 			
 			function updateIncomeBar(){
 				$("#totalBudgetRoom").attr('value', income);
@@ -48,13 +47,28 @@ $(document).ready(function() {
 			$("#expenseForm").hide();
 
 			function updateProgressBar(expenseType){
-				expenseType -= amount;
+				if (expenseType === "Food"){
+					var currentFoodValue = $("#totalFood").val();
+					currentFoodValue += Number(amount);
+					$("#totalFood").val(currentFoodValue);
+				} else if (expenseType === "Clothing"){
+					var currentClothingValue = $("#totalClothing").val();
+					currentClothingValue += Number(amount);
+					$("#totalClothing").val(currentClothingValue);
+				} else if (expenseType === "Bills"){
+					var currentBillsValue = $("#totalBills").val();
+					currentBillsValue += Number(amount);
+					$("#totalBills").val(currentBillsValue);
+				} else if (expenseType === "Entertainment"){
+					var currentEntertainmentValue = $("#totalEnt").val();
+					currentEntertainmentValue += Number(amount);
+					$("#totalEnt").val(currentEntertainmentValue);
+				}
 
 			}
 			updateProgressBar(newExpenseObject.category);
-			$("#" + category + "Bar")
+
 		})
-		
 
 
 
