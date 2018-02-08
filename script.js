@@ -3,9 +3,13 @@ $(document).ready(function() {
 		var income;
 		$("#incomeForm").hide();
 		$("#expenseForm").hide()
+		var FoodBar = $("#totalFood").val(0);
+		var EntertainmentBar = $("#totalEnt").val(0);
+		var ClothingBar = $("#totalClothing").val(0);
+		var BillsBar = $("#totalBills").val(0);
 
 		var allExpenses=[];
-
+		
 
 		$("#updateIncomeButton").click(function(){
 			$("#incomeForm").show();
@@ -14,23 +18,41 @@ $(document).ready(function() {
 		$("#saveIncomeButton").click(function(event){
 			event.preventDefault();
 			income = $("#incomeInput").val();
+			$("#totalEnt").attr('max', income);
+			$("#totalClothing").attr('max', income);
+			$("#totalFood").attr('max', income);
+			$("#totalBills").attr('max', income);
 			$("#totalBudgetRoom").attr('value', income).attr('max', income);
 			$("#incomeForm").hide();
 		})
+		
+
 		$("#addExpenseButton").click(function(event){
 			$("#expenseForm").show();
 		})
 		$("#saveExpenseButton").click(function(event){
 			event.preventDefault();
-			
+			var runningTotal = income;
 			var category = $("#dropdownInput").val();
 			var amount = $("#expenseAmount").val();
 			var newExpenseObject = {category, amount /*description*/};
-			console.log(newExpenseObject);
-			allExpenses.push(newExpenseObject);
-			
 
-		
+			allExpenses.push(newExpenseObject);
+			income = runningTotal-amount;
+			console.log(income);
+			
+			function updateIncomeBar(){
+				$("#totalBudgetRoom").attr('value', income);
+			}
+			updateIncomeBar();
+			$("#expenseForm").hide();
+
+			function updateProgressBar(expenseType){
+				expenseType -= amount;
+
+			}
+			updateProgressBar(newExpenseObject.category);
+			$("#" + category + "Bar")
 		})
 		
 
