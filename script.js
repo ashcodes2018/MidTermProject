@@ -53,6 +53,8 @@ $(document).ready(function() {
                 $("#expenseAmount").val(0);
                 updateProgressBar(newExpenseObject.category);
 
+                console.log(getItemsForCategory("Food"));
+
             } else {
             	alert("Insufficient Funds");
             };
@@ -71,6 +73,15 @@ $(document).ready(function() {
         }
 
     })
+    function getItemsForCategory(category) {
+        return allExpenses.filter(function(expense) {
+            if (category == expense.category) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+    }
 });
 
 
