@@ -1,82 +1,87 @@
 $(document).ready(function() {
 
-		var income;
-		$("#incomeForm").hide();
-		$("#expenseForm").hide()
-		// var FoodBar = $("#totalFood").val();
-		// var EntertainmentBar = $("#totalEnt").val();
-		// var ClothingBar = $("#totalClothing").val();
-		// var BillsBar = $("#totalBills").val();
+    var income;
+    $("#incomeForm").hide();
+    $("#expenseForm").hide()
+    // var FoodBar = $("#totalFood").val();
+    // var EntertainmentBar = $("#totalEnt").val();
+    // var ClothingBar = $("#totalClothing").val();
+    // var BillsBar = $("#totalBills").val();
 
-		var allExpenses=[];
-		
-
-		$("#updateIncomeButton").click(function(){
-			$("#incomeForm").show();
-		});
-
-		$("#saveIncomeButton").click(function(event){
-			event.preventDefault();
-			income = $("#incomeInput").val();
-			$("#totalEnt").attr('max', income);
-			$("#totalClothing").attr('max', income);
-			$("#totalFood").attr('max', income);
-			$("#totalBills").attr('max', income);
-			$("#totalBudgetRoom").attr('value', income).attr('max', income);
-			$("#incomeForm").hide();
-		})
-		
-
-		$("#addExpenseButton").click(function(event){
-			$("#expenseForm").show();
-		})
-		$("#saveExpenseButton").click(function(event){
-			event.preventDefault();
-			var runningTotal = income;
-			var category = $("#dropdownInput").val();
-			var amount = $("#expenseAmount").val();
-			var newExpenseObject = {category, amount /*description*/};
-
-			allExpenses.push(newExpenseObject);
-			income = runningTotal-amount;
-			
-			function updateIncomeBar(){
-				$("#totalBudgetRoom").attr('value', income);
-			}
-			updateIncomeBar();
-			$("#expenseForm").hide();
-
-			function updateProgressBar(expenseType){
-				if (expenseType === "Food"){
-					var currentFoodValue = $("#totalFood").val();
-					currentFoodValue += Number(amount);
-					$("#totalFood").val(currentFoodValue);
-				} else if (expenseType === "Clothing"){
-					var currentClothingValue = $("#totalClothing").val();
-					currentClothingValue += Number(amount);
-					$("#totalClothing").val(currentClothingValue);
-				} else if (expenseType === "Bills"){
-					var currentBillsValue = $("#totalBills").val();
-					currentBillsValue += Number(amount);
-					$("#totalBills").val(currentBillsValue);
-				} else if (expenseType === "Entertainment"){
-					var currentEntertainmentValue = $("#totalEnt").val();
-					currentEntertainmentValue += Number(amount);
-					$("#totalEnt").val(currentEntertainmentValue);
-				}
-
-			}
-			updateProgressBar(newExpenseObject.category);
-
-		})
-		console.log(allExpenses);
+    var allExpenses = [];
 
 
+    $("#updateIncomeButton").click(function() {
+        $("#incomeForm").show();
+    });
 
-		// $("#" function updateTotal (){
-		// 	$("#incomeInput").val();
+    $("#incomeForm").submit(function(event) {
+        event.preventDefault();
+        income = $("#incomeInput").val();
+        $("#totalEnt").attr('max', income);
+        $("#totalClothing").attr('max', income);
+        $("#totalFood").attr('max', income);
+        $("#totalBills").attr('max', income);
+        $("#totalBudgetRoom").attr('value', income).attr('max', income);
+        $("#incomeForm").hide();
+    })
 
-		// }
+
+    $("#addExpenseButton").click(function(event) {
+        $("#expenseForm").show();
+    })
+    $("#saveExpenseButton").click(function(event) {
+        event.preventDefault();
+        var runningTotal = income;
+        var category = $("#dropdownInput").val();
+        var amount = $("#expenseAmount").val();
+        var newExpenseObject = { category: category, amount: amount /*description*/ };
+
+        allExpenses.push(newExpenseObject);
+        income = runningTotal - amount;
+
+        function updateIncomeBar() {
+            $("#totalBudgetRoom").attr('value', income);
+        }
+        updateIncomeBar();
+        $("#expenseForm").hide();
+
+        function updateProgressBar(expenseType) {
+            var progressBar = getProgressBarForCategory(expenseType);
+            var currentValue = progressBar.val();
+            currentValue += Number(amount);
+            progressBar.val(currentValue);
+        }
+        updateProgressBar(newExpenseObject.category);
+
+    })
+    console.log(allExpenses);
+
+    function getProgressBarForCategory(category) {
+        if (income > 0) {
+            switch (category) {
+                case "Food":
+                    return $("#totalFood");
+                case "Clothing":
+                    return $("#totalClothing");
+                case "Bills":
+                    return $("#totalBills");
+                case "Entertainment":
+                    return $("#totalEnt");
+            }
+        } else {
+        	alert("Insufficient Funds");
+        }
+
+    }
+
+
+
+
+    // $("#" function updateTotal (){
+    // 	$("#incomeInput").val();
+
+    // }
 
 
 
@@ -134,7 +139,7 @@ $(document).ready(function() {
     // var foodBar = $("#totalFood").val();
     // var clothingBar = $("#totalClothing").val();
     // var billsBar = $("#totalBills").val();
-    
+
     // // var expenseType;
     // var totalExpenses;
     // var currentFoodValue = 0;
@@ -165,7 +170,7 @@ $(document).ready(function() {
     //     console.log(expenseAmount);
 
     //     expenseDescription = $("#expenseDescription").val();
-        
+
     //     var foodExpenses = $("#totalFood").attr('value');
     //     var runningTotal = totalIncome - expenseAmount;
 
@@ -174,7 +179,7 @@ $(document).ready(function() {
     //         function updateFoodProgress() {
     //         	$("#totalBudgetRoom").attr('value', newTotalValue-=expenseAmount);
     //             $("#totalFood").attr('value', foodExpenses += expenseAmount);
-                
+
     //         };
     //         updateFoodProgress();
 

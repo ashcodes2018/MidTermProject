@@ -37,7 +37,7 @@
         <div>
             <form id="incomeForm" onsubmit="event.preventDefault()">
                 <h2>Weekly Income</h2>
-                <input type="number" placeholder="Weekly Income" id="incomeInput">
+                <input type="number" placeholder="Weekly Income" id="incomeInput" required>
                 <button type="submit" id="saveIncomeButton">ADD</button>
             </form>
         </div>
@@ -51,7 +51,7 @@
                 <option value="Bills">Bill</option>
             </select>
             <p>Amount:</p>
-            <input type="number" id="expenseAmount">
+            <input type="number" id="expenseAmount" required>
             <p>Description</p>
             <textarea></textarea>
             <button id="saveExpenseButton">Save</button>
