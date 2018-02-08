@@ -69,7 +69,7 @@ $(document).ready(function() {
 			updateProgressBar(newExpenseObject.category);
 
 		})
-
+		console.log(allExpenses);
 
 
 
