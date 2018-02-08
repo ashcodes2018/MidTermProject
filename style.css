@@ -6,6 +6,11 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
+  font-family: 'Ubuntu', sans-serif;
+}
+h1 {
+  font-family: 'Rammetto One', cursive;
+  font-size: 40px;
 }
 #divbackground{
   background-color: white;
@@ -81,3 +86,57 @@ body{
   background-color: white;
   padding: 5px;
 }
+
+
+
+@media only screen and (min-width: 768px){
+  #expenseForm{
+    height: 250px;
+    width: 33.333333333333333333333333333%;
+    right: 33.333333333333333333333333333%;
+  }
+  #incomeInput {
+    width: 100%;
+  }
+  #expenseAmount {
+    width: 100%;
+  }
+  #dropdownInput{
+    width: 100%;
+  }
+  #incomeForm{
+    height: 120px;
+    width: 33.333333333333333333333333333%;
+    right: 33.333333333333333333333333333%;
+  }
+  #buttonDiv {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .widerDiv {
+    width: 40%;
+    margin: 0 auto;
+  }
+  #addExpenseButton {
+    margin-top: 0px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
