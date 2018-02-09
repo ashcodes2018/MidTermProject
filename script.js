@@ -83,7 +83,8 @@ $(document).ready(function() {
 
     });
     $("#totalEnt").click(function(){
-        $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="entSpan"></span></div></div>')
+        var entItems = getItemsForCategory("Entertainment");
+        $(this).after('<div class= "something"><div><span id="entSpan">' + entItems + '</span></div></div>')
     });
     $("#totalFood").click(function(){
         $(this).after('<div class= "something"><div id="foodDiv">Here are all of your expenses for this category!</div></div>')
@@ -94,9 +95,9 @@ $(document).ready(function() {
     $("#totalBills").click(function(){
         $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="billsSpan"></span></div></div>')
     });
-    var getItemsForFood = getItemsForCategory("Food");
-    console.log(getItemsForFood);
-    $("#foodDiv").append(getItemsForFood);
+    // var getItemsForFood = getItemsForCategory("Food");
+    // console.log(getItemsForFood);
+    // $("#foodDiv").append(getItemsForFood);
     function getItemsForCategory(category) {
         return allExpenses.filter(function(expense) {
             if (category == expense.category) {
