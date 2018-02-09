@@ -34,7 +34,8 @@ $(document).ready(function() {
             if (income > 0 && income >= Number($("#expenseAmount").val())) {
                 var category = $("#dropdownInput").val();
                 var amount = Number($("#expenseAmount").val());
-                var newExpenseObject = { category: category, amount: amount};
+                var description = $("#expenseDescription").val();
+                var newExpenseObject = { category: category, amount: amount, description: description};
 
                 allExpenses.push(newExpenseObject);
                 $("#incomeNumber").text(income-Number($("#expenseAmount").val()));
@@ -83,10 +84,16 @@ $(document).ready(function() {
 
     });
     $("#totalEnt").click(function(){
-        $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="entSpan"></span></div></div>')
+        var entItems = getItemsForCategory("Entertainment");
+        console.log(entItems);
+        entItems.forEach(function(item) {
+            var cat = item.category;
+            var amou = item.amount;
+            var desc = item.description;
+            $("#totalEnt").after('<div class= "something">' + cat + " $" + amou + " " + desc + '<div><span></span></div></div>');
+        });
     });
     $("#totalFood").click(function(){
-        $(this).after('<div class= "something"><div id="foodDiv">Here are all of your expenses for this category!</div></div>')
     });
     $("#totalClothing").click(function(){
         $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="clothingSpan"></span></div></div>')
@@ -94,9 +101,6 @@ $(document).ready(function() {
     $("#totalBills").click(function(){
         $(this).after('<div class= "something"><div>Here are all of your expenses for this category!<span id="billsSpan"></span></div></div>')
     });
-    var getItemsForFood = getItemsForCategory("Food");
-    console.log(getItemsForFood);
-    $("#foodDiv").append(getItemsForFood);
     function getItemsForCategory(category) {
         return allExpenses.filter(function(expense) {
             if (category == expense.category) {
