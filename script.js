@@ -93,6 +93,36 @@ $(document).ready(function() {
             $("#totalEnt").after('<div class= "something">' + cat + " $" + amou + " " + desc + '<div><span></span></div></div>');
         });
     });
+    $("#totalFood").click(function(){
+        var foodItems = getItemsForCategory("Food");
+        console.log(foodItems);
+        foodItems.forEach(function(item) {
+            var cat = item.category;
+            var amou = item.amount;
+            var desc = item.description;
+            $("#totalFood").after('<div class= "something">' + cat + " $" + amou + " " + desc + '<div><span></span></div></div>');
+        });
+    });
+    $("#totalClothing").click(function(){
+        var clothingItems = getItemsForCategory("Clothing");
+        console.log(clothingItems);
+        clothingItems.forEach(function(item) {
+            var cat = item.category;
+            var amou = item.amount;
+            var desc = item.description;
+            $("#totalClothing").after('<div class= "something">' + cat + " $" + amou + " " + desc + '<div><span></span></div></div>');
+        });
+    });
+    $("#totalBills").click(function(){
+        var billItems = getItemsForCategory("Bills");
+        console.log(billItems);
+        billItems.forEach(function(item) {
+            var cat = item.category;
+            var amou = item.amount;
+            var desc = item.description;
+            $("#totalBills").after('<div class= "something">' + cat + " $" + amou + " " + desc + '<div><span></span></div></div>');
+        });
+    });
 
     function getItemsForCategory(category) {
         return allExpenses.filter(function(expense) {
